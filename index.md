@@ -73,6 +73,9 @@ The lattice is organized into four OWL-style layers, each a subdirectory of `ent
 * [Election](/entities/domain/election.md) - an event in which offices are decided by vote.
 * [Parliamentary Session](/entities/domain/parliamentary-session.md) - a sitting period of a legislature.
 * [Foreign Relation](/entities/domain/foreign-relation.md) - a connection between states.
+* [Machine Learning Algorithm](/entities/domain/machine-learning-algorithm.md) - a computational procedure that learns patterns from data.
+* [Business Department](/entities/domain/business-department.md) - a functional unit within an organization.
+* [Persona](/entities/domain/persona.md) - a fictional representation of a target user or customer segment.
 
 ## Application (L3 - specific types)
 
@@ -91,6 +94,27 @@ The lattice is organized into four OWL-style layers, each a subdirectory of `ent
 * [Global Corporation](/entities/application/global-corporation.md) - a large multi-country enterprise.
 * [Educational Institution](/entities/application/educational-institution.md) - a school or university.
 * [Armed Force](/entities/application/armed-force.md) - an organized military service of a state.
+* [Supervised Learning](/entities/application/supervised-learning.md) - a machine learning paradigm learning from labeled data.
+* [Unsupervised Learning](/entities/application/unsupervised-learning.md) - a machine learning paradigm discovering patterns in unlabeled data.
+* [Reinforcement Learning](/entities/application/reinforcement-learning.md) - a machine learning paradigm maximizing rewards through interaction.
+* [Deep Learning](/entities/application/deep-learning.md) - a machine learning subset using multi-layer neural networks.
+* [Regression](/entities/application/regression.md) - a supervised learning task predicting continuous values.
+* [Classification](/entities/application/classification.md) - a supervised learning task predicting categorical labels.
+* [Clustering](/entities/application/clustering.md) - an unsupervised learning task grouping similar instances.
+* [Model](/entities/application/model.md) - a trained machine learning artifact for prediction.
+* [Marketing Department](/entities/application/marketing-department.md) - a department responsible for promotion and demand generation.
+* [Finance Department](/entities/application/finance-department.md) - a department responsible for financial planning and accounting.
+* [Operations Department](/entities/application/operations-department.md) - a department responsible for core process execution.
+* [Human Resources Department](/entities/application/human-resources-department.md) - a department managing the employee lifecycle.
+* [Risk Management Department](/entities/application/risk-management-department.md) - a department identifying and mitigating organizational risks.
+* [Information Technology Department](/entities/application/information-technology-department.md) - a department managing technology infrastructure.
+* [Product Department](/entities/application/product-department.md) - a department responsible for product strategy and development.
+* [Sales Department](/entities/application/sales-department.md) - a department responsible for revenue generation.
+* [Customer Success Department](/entities/application/customer-success-department.md) - a department ensuring customer outcomes and retention.
+* [User Persona](/entities/application/user-persona.md) - a persona representing a typical end user.
+* [Buyer Persona](/entities/application/buyer-persona.md) - a persona representing a decision-maker or purchaser.
+* [Decision Maker](/entities/application/decision-maker.md) - a persona representing an authority for approvals.
+* [Product User](/entities/application/product-user.md) - a persona representing an active product user.
 
 # Implemented by
 
