@@ -39,6 +39,7 @@ Specialized entities and content genres.
 * [Security Control](/entities/domain/security-control.md) - a safeguard protecting confidentiality, integrity, availability.
 * [Identity Provider](/entities/domain/identity-provider.md) - a system entity managing identity and authentication.
 * [Software Development Lifecycle](/entities/domain/software-development-lifecycle.md) - the end-to-end process for building software.
+* [Skill](/entities/domain/skill.md) - a reusable, self-contained capability encapsulating a workflow or methodology.
 
 ## Navigation
 
