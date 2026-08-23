@@ -76,6 +76,11 @@ The lattice is organized into four OWL-style layers, each a subdirectory of `ent
 * [Machine Learning Algorithm](/entities/domain/machine-learning-algorithm.md) - a computational procedure that learns patterns from data.
 * [Business Department](/entities/domain/business-department.md) - a functional unit within an organization.
 * [Persona](/entities/domain/persona.md) - a fictional representation of a target user or customer segment.
+* [Software System](/entities/domain/software-system.md) - a cohesive software product or platform.
+* [Architecture Pattern](/entities/domain/architecture-pattern.md) - a reusable architectural solution template.
+* [Security Control](/entities/domain/security-control.md) - a safeguard protecting confidentiality, integrity, availability.
+* [Identity Provider](/entities/domain/identity-provider.md) - a system entity managing identity and authentication.
+* [Software Development Lifecycle](/entities/domain/software-development-lifecycle.md) - the end-to-end process for building software.
 
 ## Application (L3 - specific types)
 
@@ -115,6 +120,8 @@ The lattice is organized into four OWL-style layers, each a subdirectory of `ent
 * [Buyer Persona](/entities/application/buyer-persona.md) - a persona representing a decision-maker or purchaser.
 * [Decision Maker](/entities/application/decision-maker.md) - a persona representing an authority for approvals.
 * [Product User](/entities/application/product-user.md) - a persona representing an active product user.
+* [Cloud Infrastructure](/entities/application/cloud-infrastructure.md) - computing infrastructure hosted by a cloud service provider.
+* [On-Premise Infrastructure](/entities/application/on-premise-infrastructure.md) - computing infrastructure hosted on organizational premises.
 
 # Implemented by
 
