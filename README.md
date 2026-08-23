@@ -1,0 +1,1 @@
+entities/foundational/thing.md

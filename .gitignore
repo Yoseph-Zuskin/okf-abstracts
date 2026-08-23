@@ -1,0 +1,8 @@
+# Playwright MCP logs
+.playwright-mcp/
+
+# Bossi-style editor config
+.obsidian/
+
+# Build artifacts are regenerable
+viz.html
