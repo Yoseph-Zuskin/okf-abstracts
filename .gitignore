@@ -6,3 +6,6 @@
 
 # Build artifacts are regenerable
 viz.html
+
+# Markdown lint configuration
+.markdownlint.json

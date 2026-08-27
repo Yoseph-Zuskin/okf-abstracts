@@ -16,21 +16,21 @@ verified:
 status: stable
 stale_after: 2027-08-19
 ---
-
 # Small and Medium Enterprise
 
-A business enterprise with headcount or revenue below the thresholds of a large corporation.
+A business enterprise with headcount or revenue below the thresholds of a large
+corporation.
 
 ## Contract
 
-A concept of this class describes the class itself as a universal — *not* a concrete
-instance. Its body defines the contract for instances:
+A concept of this class describes the class itself as a universal — *not* a concrete instance. Its body defines the contract for instances:
 
 - **What it is** (definition above).
-- **Frontmatter** an instance must carry: a distinct `type` value naming this class, plus a
-  `subtypes_of` entry `{ type: <Class>, resource: <href>, version: <tag> }` pointing here.
+- **Frontmatter** an instance must carry: a distinct `type` value naming this
+  class, plus a `subtypes_of` entry `{ type: <Class>, resource: <href>, version: <tag> }` pointing here.
 - **Body conventions** expected of instances.
 
 ## Implemented by
 
-- Concrete instances in the workspace bundles reference this class via `subtypes_of`.
+- Concrete instances in the workspace bundles reference this class via
+  `subtypes_of`.
