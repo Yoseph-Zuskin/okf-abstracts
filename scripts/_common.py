@@ -107,9 +107,11 @@ def _is_local_only(path, root, ignored):
     r = Path(root).resolve()
     p = Path(path)
     try:
-        rel = (
-            ((r / p) if not p.is_absolute() else p).resolve().relative_to(r).as_posix()
-        )
+        # NB: resolve() anchors relative paths at CWD. Callers pass either
+        # absolute paths or CWD-relative ones (rglob output, root/rel joins
+        # with a CWD-relative root), so never re-anchor p under r here:
+        # (r / p) would double a CWD-relative root segment.
+        rel = p.resolve().relative_to(r).as_posix()
     except ValueError:
         return False
     return rel in ignored and not _under_gitkeep(path, root)
