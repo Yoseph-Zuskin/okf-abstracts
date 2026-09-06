@@ -1,0 +1,29 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirement.txt
+      - run: python -m unittest discover tests
+      - run: python scripts/validate_subtype.py . --strict
+      - run: python scripts/check_consistency.py .
+      - run: python scripts/check_links.py .
+      - run: python scripts/check_newlines.py .
+      - run: bash scripts/check_abstract_lineage.sh .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      # READMEs carry intentional marketing HTML (MD033), enforced by config elsewhere
+      - run: npx --yes markdownlint-cli2 "**/*.md" "!**/README.md"

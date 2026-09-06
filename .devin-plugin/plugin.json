@@ -1,0 +1,14 @@
+{
+  "name": "okf-abstracts",
+  "version": "0.1.0",
+  "description": "OKF v0.2 abstract class ontology (L0-L3 layers). Shared class definitions for OKF bundles. Requires okf-skills for compliance validation.",
+  "author": "Yoseph Zuskin",
+  "license": "MIT",
+  "skills": [
+    "okf-validate-subtype",
+    "okf-generate-bundle",
+    "okf-abstract-lineage",
+    "okf-intermediate-layers",
+    "okf-adversarial-review"
+  ]
+}

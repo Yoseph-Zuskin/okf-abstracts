@@ -2,7 +2,7 @@
 
 Specific types.
 
-## Classes
+## Content
 
 * [Online Program](/entities/application/online-program.md) - a training program
   delivered online.
@@ -12,8 +12,6 @@ Specific types.
   for use inside an organization.
 * [Agent Product](/entities/application/agent-product.md) - a product delivered
   by autonomous agents.
-* [Unmanned Aerial Vehicle](/entities/application/unmanned-aerial-vehicle.md) -
-  a pilotless powered aircraft.
 * [Autonomous Agent](/entities/application/autonomous-agent.md) - a software
   agent that pursues goals independently.
 * [Act](/entities/application/act.md) - a law enacted by a legislature.
@@ -30,8 +28,6 @@ Specific types.
   multi-country enterprise.
 * [Educational Institution](/entities/application/educational-institution.md) -
   a school or university.
-* [Armed Force](/entities/application/armed-force.md) - an organized military
-  service of a state.
 * [Supervised Learning](/entities/application/supervised-learning.md) - a
   machine learning paradigm learning from labeled data.
 * [Unsupervised Learning](/entities/application/unsupervised-learning.md) - a
@@ -70,8 +66,8 @@ Specific types.
   representing a typical end user.
 * [Buyer Persona](/entities/application/buyer-persona.md) - a persona
   representing a decision-maker or purchaser.
-* [Decision Maker](/entities/application/decision-maker.md) - a persona
-  representing an authority for approvals.
+* [Decision Maker](/entities/application/decision-maker.md) - a role
+  representing an occupant with approval authority.
 * [Product User](/entities/application/product-user.md) - a persona
   representing an active product user.
 * [Cloud Infrastructure](/entities/application/cloud-infrastructure.md) -
@@ -79,7 +75,7 @@ Specific types.
 * [On-Premise Infrastructure](/entities/application/on-premise-infrastructure.md) -
   computing infrastructure hosted on organizational premises.
 
-## Navigation
+## Subdirectories
 
 * [Foundational (L0)](../foundational/index.md)
 * [Core (L1)](../core/index.md)

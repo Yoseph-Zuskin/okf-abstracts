@@ -1,0 +1,27 @@
+{
+  "name": "okf-abstracts",
+  "version": "0.1.0",
+  "description": "OKF v0.2 abstract class ontology - shared class ontology for knowledge bundles",
+  "author": "Yoseph Zuskin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yoseph-Zuskin/okf-abstracts.git"
+  },
+  "keywords": [
+    "okf",
+    "ontology",
+    "knowledge-bundle",
+    "okf-v0.2"
+  ],
+  "scripts": {
+    "validate": "python scripts/validate_subtype.py .",
+    "validate:strict": "python scripts/validate_subtype.py . --strict",
+    "generate": "python scripts/generate_bundle.py",
+    "check-lineage": "bash scripts/check_abstract_lineage.sh"
+  },
+  "bugs": {
+    "url": "https://github.com/Yoseph-Zuskin/okf-abstracts/issues"
+  },
+  "homepage": "https://github.com/Yoseph-Zuskin/okf-abstracts#readme"
+}

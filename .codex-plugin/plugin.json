@@ -1,0 +1,39 @@
+{
+  "name": "okf-abstracts",
+  "version": "0.1.0",
+  "description": "OKF v0.2 abstract class ontology (foundational -> core -> domain -> application layers). Shared class definitions for OKF v0.2 knowledge bundles. Requires okf-skills for compliance validation.",
+  "author": {
+    "name": "Yoseph Zuskin",
+    "url": "https://github.com/Yoseph-Zuskin"
+  },
+  "homepage": "https://github.com/Yoseph-Zuskin/okf-abstracts",
+  "repository": "https://github.com/Yoseph-Zuskin/okf-abstracts",
+  "license": "MIT",
+  "keywords": [
+    "okf",
+    "ontology",
+    "class-hierarchy",
+    "knowledge-bundle",
+    "okf-v0.2"
+  ],
+  "skills": "skills/",
+  "interface": {
+    "displayName": "OKF Abstracts",
+    "shortDescription": "OKF v0.2 abstract class ontology (L0-L3 layers)",
+    "longDescription": "OKF Abstracts provides the shared class ontology for OKF v0.2 knowledge bundles. Classes are organized into four OWL-style layers (foundational L0, core L1, domain L2, application L3) with 105 class definitions. Concepts in other bundles reference these via subtype_of frontmatter. REQUIRES okf-skills (https://github.com/scaccogatto/okf-skills) for full OKF v0.2 compliance validation — run okf-skills first for spec compliance, then okf-abstracts skills for subtype coherence.",
+    "developerName": "Yoseph Zuskin",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Yoseph-Zuskin/okf-abstracts",
+    "defaultPrompt": [
+      "Validate subtype_of linkage against okf-abstracts classes",
+      "Generate a new OKF bundle using okf-abstracts classes",
+      "Check if my concept headers match abstract class requirements"
+    ],
+    "brandColor": "#6E56CF",
+    "screenshots": []
+  }
+}

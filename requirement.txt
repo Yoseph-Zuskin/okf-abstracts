@@ -1,0 +1,4 @@
+# Pinned runtime dependency for okf-abstracts Python scripts
+# (validate_subtype.py, generate_bundle.py, check_links.py).
+# Install: pip install -r requirement.txt
+pyyaml==6.0.3

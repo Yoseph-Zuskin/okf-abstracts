@@ -2,7 +2,7 @@
 
 Very basic abstractions; the top of the lattice.
 
-## Classes
+## Content
 
 * [Spec](/entities/foundational/okf-spec.md) - the canonical Google OKF v0.2 specification, top of the lattice.
 * [Thing](/entities/foundational/thing.md) - universal root class; everything is a Thing.
@@ -14,7 +14,7 @@ Very basic abstractions; the top of the lattice.
 * [Relation](/entities/foundational/relation.md) - a connection between things.
 * [Quality](/entities/foundational/quality.md) - a property or attribute.
 
-## Navigation
+## Subdirectories
 
 * [Core (L1)](../core/index.md)
 * [Domain (L2)](../domain/index.md)
