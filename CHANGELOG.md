@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [Unreleased]
+
+### Changed
+
+- **Tooling slim-down**: removed dead lineage-checker flags and logger, unread generator method, unreachable validator branch and aliases (~60 lines)
+- **Checker dedup**: shared frontmatter parser, constants, manifest finder, and file-walk iterator in `_common.py`; all gates re-verified green
+
 ## [0.1.0] - 2026-09-05
 
 ### Added
