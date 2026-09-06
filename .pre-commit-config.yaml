@@ -1,0 +1,55 @@
+# Pre-commit hooks for okf-abstracts. Install: pip install pre-commit →
+# pre-commit install. Markdown is linted WITHOUT --fix (autofix has caused
+# whitespace damage; run markdownlint-cli2 --fix by hand on single files only).
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      # .gitignore is owner-managed; hygiene hooks must not touch it
+      - id: trailing-whitespace
+        exclude: ^\.gitignore$
+      - id: end-of-file-fixer
+        exclude: ^\.gitignore$
+      - id: check-json
+      - id: check-yaml
+      - id: check-merge-conflict
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.13
+    hooks:
+      # E=errors, F=pyflakes (≈flake8 core), I=isort. E501 off: long URLs and
+      # fixture strings are unsplittable; ruff-format governs wrapping.
+      - id: ruff-check
+        args: [--select, "E,F,I", --line-length, '100', --ignore, E501]
+      - id: ruff-format
+  - repo: local
+    hooks:
+      - id: markdownlint
+        name: markdownlint (lint-only, never autofix)
+        entry: npx --yes markdownlint-cli2
+        language: system
+        types: [markdown]
+        exclude: (^|/)README\.md$
+      - id: okf-validate
+        name: OKF subtype validation (strict)
+        entry: python scripts/validate_subtype.py . --strict
+        language: system
+        pass_filenames: false
+        files: \.(md|py)$
+      - id: okf-consistency
+        name: OKF consistency checks
+        entry: python scripts/check_consistency.py .
+        language: system
+        pass_filenames: false
+        files: \.(md|json)$
+      - id: okf-links
+        name: OKF internal link check
+        entry: python scripts/check_links.py .
+        language: system
+        pass_filenames: false
+        files: \.md$
+      - id: okf-newlines
+        name: OKF trailing-newline check
+        entry: python scripts/check_newlines.py .
+        language: system
+        pass_filenames: false
+        files: \.md$

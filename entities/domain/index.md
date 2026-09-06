@@ -68,8 +68,20 @@ Specialized entities and content genres.
   the end-to-end process for building software.
 * [Skill](/entities/domain/skill.md) - a reusable, self-contained capability
   encapsulating a workflow or methodology.
+* [ExecPlan](/entities/domain/exec-plan.md) - a plan record for executing
+  multi-step work.
+* [Generator](/entities/domain/generator.md) - a skill that generates new OKF
+  bundles with abstract lineage.
+* [Validator](/entities/domain/validator.md) - a skill that validates OKF
+  bundles against the ontology.
+* [Infrastructure](/entities/domain/infrastructure.md) - computing
+  infrastructure hosting systems and models.
+* [Machine Learning Task](/entities/domain/machine-learning-task.md) - a
+  problem type solved by training or prompting.
+* [Learning Paradigm](/entities/domain/learning-paradigm.md) - how learning
+  happens (labeled data, structure, rewards).
 
-## Navigation
+## Subdirectories
 
 * [Foundational (L0)](../foundational/index.md)
 * [Core (L1)](../core/index.md)

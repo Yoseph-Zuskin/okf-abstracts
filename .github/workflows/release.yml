@@ -1,0 +1,104 @@
+name: release
+
+# Release flow: workflow_dispatch (with an explicit version) opens a
+# `release/vX.Y.Z` PR from develop carrying the bump + CHANGELOG promotion.
+# A human reviews and merges (no auto-merge: solo repo, self-approvals do
+# not count, so the merge click is the audit gate); merging to main tags
+# and publishes.
+# Direct-to-main version pushes are an anti-pattern under branch protection:
+# the release PR is the audit gate, not bureaucracy.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (x.y.z, no leading v)"
+        required: true
+      base:
+        description: "Base branch to cut the release from"
+        default: "develop"
+  push:
+    branches: [main]
+    paths: ["VERSION"]
+
+jobs:
+  open-release-pr:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.base }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - name: Bump versions
+        run: python scripts/bump_version.py "${{ inputs.version }}"
+      - name: Promote CHANGELOG Unreleased section
+        run: |
+          python - <<'EOF'
+          import datetime, re, sys
+          from pathlib import Path
+          p = Path("CHANGELOG.md")
+          t = p.read_text(encoding="utf-8")
+          m = re.search(r"(?m)^## \[Unreleased\]\s*\n(.*?)(?=^## \[|\Z)",
+                        t, re.S)
+          if not m or not m.group(1).strip():
+              print("No ## [Unreleased] content: write release notes first.")
+              sys.exit(1)
+          today = datetime.date.today().isoformat()
+          ver = "${{ inputs.version }}"
+          t = (t[: m.start()] + f"## [{ver}] - {today}\n" + m.group(1)
+               + t[m.end():])
+          p.write_text(t, encoding="utf-8")
+          print(f"CHANGELOG promoted to [{ver}] - {today}")
+          EOF
+      - name: Sanity check versions agree
+        run: |
+          v="$(cat VERSION)"
+          test "$v" = "${{ inputs.version }}" || exit 1
+          grep -rq "\"version\": \"$v\"" package.json \
+            .codex-plugin/plugin.json .claude-plugin/plugin.json \
+            .devin-plugin/plugin.json .grok-plugin/plugin.json \
+            .qoder-plugin/plugin.json .openclaw/skills/okf-abstracts/manifest.json \
+            .github/plugin.json || exit 1
+          echo "versions agree on $v"
+      - name: Open release PR for human review and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b release/v${{ inputs.version }}
+          git add -A
+          git commit -m "chore: release v${{ inputs.version }}"
+          git push -u origin release/v${{ inputs.version }}
+          gh pr create --base main --head release/v${{ inputs.version }} \
+            --title "Release v${{ inputs.version }}" \
+            --body "Automated release PR. CI + review must pass before merge."
+
+  tag:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Tag and publish GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          v="$(cat VERSION)"
+          if git rev-parse "v$v" >/dev/null 2>&1; then
+            echo "tag v$v already exists"
+            exit 0
+          fi
+          notes="$(awk "/^## \[$v\]/{f=1;next} /^## \[/{f=0} f" CHANGELOG.md)"
+          git tag "v$v"
+          git push origin "v$v"
+          gh release create "v$v" --title "v$v" --notes "$notes"

@@ -1,0 +1,20 @@
+{
+  "default": true,
+  "MD013": {
+    "line_length": 1000,
+    "code_blocks": false,
+    "tables": true,
+    "headings": false,
+    "ignore_reference_definitions": true,
+    "ignore_code_blocks": true,
+    "ignore_html": true,
+    "ignore_front_matter": true,
+    "ignore_bullet_lists": true,
+    "ignore_numbered_lists": true
+  },
+  "MD025": false,
+  "MD041": false,
+  "MD040": true,
+  "MD052": false,
+  "MD004": false
+}

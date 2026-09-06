@@ -6,8 +6,8 @@ tags:
   - core
   - artifact
   - action-guidance
-subtypes_of:
-- { type: Artifact, resource: /entities/core/artifact.md }
+subtype_of:
+- { type: Artifact, resource: /entities/core/artifact.md, version: v0.1.0 }
 generated: { by: human:yoseph-zuskin, at: '2026-08-19T12:00:00Z' }
 verified:
 - { by: human:yoseph-zuskin, at: '2026-08-19T12:05:00Z' }
@@ -27,10 +27,19 @@ A concept of this class describes the class itself as a universal — *not* a co
 
 - **What it is** (definition above).
 - **Frontmatter** an instance must carry: a distinct `type` value naming this
-  class, plus a `subtypes_of` entry `{ type: <Class>, resource: <href>, version: <tag> }` pointing here.
+  class, plus a `subtype_of` entry `{ type: <Class>, resource: <href>, version: <tag> }` pointing here.
 - **Body conventions** expected of instances.
+
+### Required Headers
+
+- Definition
+- Sources
+
+Instances of `Operational Artifact` MUST:
+
+- state the action it guides and the actor expected to follow it.
 
 ## Implemented by
 
 - Concrete instances in the workspace bundles reference this class via
-  `subtypes_of`.
+  `subtype_of`.

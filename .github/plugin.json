@@ -1,0 +1,15 @@
+{
+  "name": "okf-abstracts",
+  "version": "0.1.0",
+  "description": "OKF v0.2 abstract class ontology for GitHub Copilot - shared class definitions plus subtype validation and bundle generation skills. Requires okf-skills for compliance validation.",
+  "author": "Yoseph Zuskin",
+  "license": "MIT",
+  "entry": "skills/okf-validate-subtype",
+  "skills": [
+    "okf-validate-subtype",
+    "okf-abstract-lineage",
+    "okf-generate-bundle",
+    "okf-intermediate-layers",
+    "okf-adversarial-review"
+  ]
+}

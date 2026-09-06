@@ -5,8 +5,8 @@ description: A unit of knowledge or an abstract idea. Concepts describe, they do
 tags:
   - foundational
   - knowledge-unit
-subtypes_of:
-- { type: Entity, resource: /entities/foundational/entity.md }
+subtype_of:
+- { type: Entity, resource: /entities/foundational/entity.md, version: v0.1.0 }
 generated: { by: human:yoseph-zuskin, at: '2026-08-19T12:00:00Z' }
 verified:
 - { by: human:yoseph-zuskin, at: '2026-08-19T12:05:00Z' }
@@ -25,10 +25,19 @@ A concept of this class describes the class itself as a universal — *not* a co
 
 - **What it is** (definition above).
 - **Frontmatter** an instance must carry: a distinct `type` value naming this
-  class, plus a `subtypes_of` entry `{ type: <Class>, resource: <href>, version: <tag> }` pointing here.
+  class, plus a `subtype_of` entry `{ type: <Class>, resource: <href>, version: <tag> }` pointing here.
 - **Body conventions** expected of instances.
+
+### Required Headers
+
+- Definition
+- Sources
+
+Instances of `Concept` MUST:
+
+- define the abstraction so two readers identify the same instances.
 
 ## Implemented by
 
 - Concrete instances in the workspace bundles reference this class via
-  `subtypes_of`.
+  `subtype_of`.
