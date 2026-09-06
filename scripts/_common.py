@@ -23,6 +23,7 @@ RESERVED_FILES = frozenset(
         "CHANGELOG.md",
         "CONTRIBUTING.md",
         "AGENTS.md",
+        "PULL_REQUEST_TEMPLATE.md",
         "privacy.md",
         "terms.md",
     }

@@ -27,6 +27,7 @@ from _common import (  # noqa: E402
     _ignored_set,
     _is_local_only,
     parse_frontmatter,
+    iter_bundle_mds,
 )
 
 # =============================================================================
@@ -338,39 +339,20 @@ def validate_bundle(
 
     ignored = _ignored_set(bundle_path)
 
-    # Find all concept files: bundle root, concepts/, skills/, references/,
-    # templates/, agents/, entities/ (the lattice itself), and program modules/lessons.
-    for pattern in [
-        "*.md",
-        "**/concepts/*.md",
-        "**/skills/**/SKILL.md",
-        "references/*.md",
-        "templates/*.md",
-        "agents/*.md",
-        "entities/*/*.md",
-        "module-*/lessons/*.md",
-        "module-*/*.md",
-    ]:
-        for filepath in bundle_path.glob(pattern):
-            if any(
-                part in ("node_modules", ".git", ".venv", "__pycache__", ".openclaw")
-                for part in filepath.parts
-            ):
-                continue
-            if _is_local_only(filepath, bundle_path, ignored):
-                continue
-            if filepath.name in RESERVED_FILES:
-                continue
-            # okf-spec.md is the external Spec anchor, not a lattice class
-            if filepath.name == "okf-spec.md":
-                continue
-            issues = validate_concept(
-                filepath,
-                abstract_entities=abstract_entities,
-            )
-            checked += 1
-            for level, msg in issues:
-                all_issues.append((str(filepath.relative_to(bundle_path)), level, msg))
+    # Find all concept files using the shared iterator that respects SKIP_DIRS and git-ignored files
+    for filepath in iter_bundle_mds(bundle_path, skip_local_only=True):
+        if filepath.name in RESERVED_FILES:
+            continue
+        # okf-spec.md is the external Spec anchor, not a lattice class
+        if filepath.name == "okf-spec.md":
+            continue
+        issues = validate_concept(
+            filepath,
+            abstract_entities=abstract_entities,
+        )
+        checked += 1
+        for level, msg in issues:
+            all_issues.append((str(filepath.relative_to(bundle_path)), level, msg))
 
     # Print results
     errors = [i for i in all_issues if i[1] == "ERROR"]
