@@ -11,7 +11,7 @@ Before submitting, please keep these tenets in mind:
 1. **OWL-style Subtyping Only**: All classes use `subtype_of` (canonical singular) with one most-specific parent first. Plural aliases (`subtypes_of`, `subclass_of`, `subconcept_of`) are accepted with warnings only.
 2. **Cross-Repo Pinning**: Downstream bundles pin this repo by URL + version tag (`blob/vX.Y.Z`). Every merge to `main` must keep the lattice strict; every tag must be exactly what the pins promise.
 3. **Frontmatter Hygiene**: Descriptions containing a colon use single quotes. `generated` and every `verified[]` entry carry exactly `by` and `at` (actor + ISO 8601). Sources cited with `[^id]` footnotes matching `sources[].id`.
-4. **Spec Conformance**: All concepts comply with [OKF v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) and the [OKF Style Guide](OKF_STYLE_GUIDE.md).
+4. **Spec Conformance**: All concepts comply with [OKF v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) and the [OKF Style Guide](https://github.com/Yoseph-Zuskin/Bundles/blob/main/OKF_STYLE_GUIDE.md).
 5. **Walk the Talk**: Any PR introducing new classes, modifying the lattice, or changing tooling must update `entities/`, `CHANGELOG.md` under `[Unreleased]`, and pass all gates.
 
 ---
@@ -49,7 +49,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 - `feat:` New class, skill, validator, or tooling capability
 - `fix:` Bug fix in validators, checkers, generator, or docs
-- `docs:` Documentation-only changes (README, CHANGELOG, AGENTS, OKF_STYLE_GUIDE)
+- `docs:` Documentation-only changes (README, CHANGELOG, AGENTS, OKF_STYLE_GUIDE.md at workspace root)
 - `refactor:` Code restructuring with no behavioral change
 - `test:` Adding or updating tests
 - `chore:` CI, release, dependency pins, scaffolding
@@ -115,7 +115,7 @@ All must pass with `0 errors, 0 warnings` on both this repo and the AI-Product-M
 - [ ] All gates above pass (`0 errors, 0 warnings`)
 - [ ] `CHANGELOG.md` updated under `## [Unreleased]`
 - [ ] `log.md` appended to today's section (ISO 8601 date)
-- [ ] Relevant documentation (`README.md`, `AGENTS.md`, `OKF_STYLE_GUIDE.md`) updated
+- [ ] Relevant documentation (`README.md`, `AGENTS.md`, `OKF_STYLE_GUIDE.md` at workspace root) updated
 - [ ] **Adversarial review completed: run `okf-adversarial-review` skill on this bundle — no BLOCKING findings**
 
 ---
