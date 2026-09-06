@@ -94,6 +94,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           v="$(cat VERSION)"
+          git fetch --tags origin
           if git rev-parse "v$v" >/dev/null 2>&1; then
             echo "tag v$v already exists"
             exit 0
