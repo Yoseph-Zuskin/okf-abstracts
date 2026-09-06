@@ -2,11 +2,6 @@
 
 ## [Unreleased]
 
-### Changed
-
-- **Tooling slim-down**: removed dead lineage-checker flags and logger, unread generator method, unreachable validator branch and aliases (~60 lines)
-- **Checker dedup**: shared frontmatter parser, constants, manifest finder, and file-walk iterator in `_common.py`; all gates re-verified green
-
 ## [0.1.0] - 2026-09-05
 
 ### Added
@@ -18,3 +13,8 @@
 - **Unit tests** (`tests/`): validator diagnostics, generator golden test, gitignore exemption, provenance shape, reserved-file and structure rules
 - **Cross-harness manifests**: Codex (plus Codex-native marketplace), Claude, Devin, Grok, Qoder, OpenClaw, Copilot
 - **CI and pre-commit**: GitHub Actions CI (tests, strict validation, lineage, lint) and pre-commit hooks (hygiene, ruff, lint-only markdownlint, OKF gates)
+
+### Changed
+
+- **Tooling slim-down**: removed dead lineage-checker flags and logger, unread generator method, unreachable validator branch and aliases
+- **Checker dedup**: shared frontmatter parser, constants, manifest finder, and file-walk iterator in `_common.py`; all gates re-verified green

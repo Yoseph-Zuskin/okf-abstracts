@@ -21,6 +21,7 @@ RESERVED_FILES = frozenset(
         "log.md",
         "README.md",
         "CHANGELOG.md",
+        "CONTRIBUTING.md",
         "AGENTS.md",
         "privacy.md",
         "terms.md",

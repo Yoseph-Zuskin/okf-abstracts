@@ -27,6 +27,10 @@ Public shared class ontology for [OKF v0.2](https://github.com/GoogleCloudPlatfo
 
 `validate_subtype.py --strict` (0 errors, 0 warnings), `check_consistency.py`, `check_links.py`, `check_newlines.py`, `python -m unittest discover tests`, and `pre-commit run --all-files`. Then the `okf-adversarial-review` skill — BLOCKING findings must clear before release.
 
+## Contribution Guide
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete contribution workflow, development setup, commit conventions, gates, and release process.
+
 ## Changelog & Release
 
 - Log user-facing changes under `## [Unreleased]` in `CHANGELOG.md`; never pre-create version sections or delete `Unreleased` (the release workflow promotes it and fails without it). `log.md` keeps one section per day.
