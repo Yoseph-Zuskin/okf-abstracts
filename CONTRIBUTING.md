@@ -103,9 +103,9 @@ All must pass with `0 errors, 0 warnings` on both this repo and the AI-Product-M
    - Minor: `0.2.0` (new classes, skills, backward-compatible additions)
    - Major: `1.0.0` (breaking changes to contracts, Spec anchor, layer reorg)
 3. Workflow bumps `VERSION`, promotes `[Unreleased]` → `[version] - date`, prepends fresh `[Unreleased]`, opens `release/vX.Y.Z` PR.
-3. Review the PR (reconcile any duplicate headers), squash-merge to `main`.
-4. Tag job fires on `VERSION` change → creates `vX.Y.Z` tag + GitHub Release.
-5. **Release this repo before downstream bundles** — their CI pins this repo by tag, which must exist and be public.
+4. Review the PR (reconcile any duplicate headers), squash-merge to `main`.
+5. Tag job fires on `VERSION` change → creates `vX.Y.Z` tag + GitHub Release.
+6. **Release this repo before downstream bundles** — their CI pins this repo by tag, which must exist and be public.
 
 ---
 
