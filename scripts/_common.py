@@ -10,7 +10,7 @@ Import with:
 """
 
 from pathlib import Path
-from typing import Any, Dict, Iterator, Optional, Set, Tuple
+from typing import Any, Dict, Tuple
 
 # Spec-reserved (index, log) and repo scaffolding: never OKF concepts.
 # Ontology checks skip them always; hygiene checks (links, newlines) still

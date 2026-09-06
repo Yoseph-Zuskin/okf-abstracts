@@ -14,11 +14,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _common import (  # noqa: E402
     RESERVED_FILES,
-    SKIP_DIRS as _BASE_SKIP_DIRS,
     _ignored_set,
     _is_local_only,
     iter_bundle_mds,
     parse_frontmatter,
+)
+from _common import (
+    SKIP_DIRS as _BASE_SKIP_DIRS,
 )
 
 try:
@@ -228,7 +230,9 @@ def check_sources(root, issues):
         src = fm.get("sources")
         entries = src if isinstance(src, list) else []
         ids = set(
-            str(e["id"]) for e in entries if isinstance(e, dict) and e.get("id") is not None
+            str(e["id"])
+            for e in entries
+            if isinstance(e, dict) and e.get("id") is not None
         )
         body = strip_code(text.split("---", 2)[-1] if text.startswith("---") else text)
         cites = set(m.group(1) for m in re.finditer(r"\[\^([^\]]+)\](?!:)", body))
