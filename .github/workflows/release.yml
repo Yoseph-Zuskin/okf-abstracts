@@ -2,10 +2,11 @@ name: release
 
 # Release flow: workflow_dispatch (with an explicit version) opens a
 # `release/vX.Y.Z` PR from develop carrying the bump + CHANGELOG promotion.
-# A human merges (auto-merge armed); merging to main tags and publishes.
+# A human reviews and merges (no auto-merge: solo repo, self-approvals do
+# not count, so the merge click is the audit gate); merging to main tags
+# and publishes.
 # Direct-to-main version pushes are an anti-pattern under branch protection:
 # the release PR is the audit gate, not bureaucracy.
-# Repo setup required once: Settings -> General -> allow auto-merge.
 
 on:
   workflow_dispatch:
@@ -65,7 +66,7 @@ jobs:
             .qoder-plugin/plugin.json .openclaw/skills/okf-abstracts/manifest.json \
             .github/plugin.json || exit 1
           echo "versions agree on $v"
-      - name: Open release PR with auto-merge armed
+      - name: Open release PR for human review and merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -78,7 +79,6 @@ jobs:
           gh pr create --base main --head release/v${{ inputs.version }} \
             --title "Release v${{ inputs.version }}" \
             --body "Automated release PR. CI + review must pass before merge."
-          gh pr merge --auto --squash release/v${{ inputs.version }}
 
   tag:
     if: github.event_name == 'push'
