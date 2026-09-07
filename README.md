@@ -2,11 +2,11 @@
 
 > **Shared OWL-style Class Ontology for OKF v0.2 Knowledge Bundles** — 105 public abstract classes across four layers, modeled on the `subClassOf` pattern.
 
-[![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) [![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) [![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0) [![CI](https://img.shields.io/github/actions/workflow/status/Yoseph-Zuskin/okf-abstracts/ci.yml?branch=main&label=CI)](https://github.com/Yoseph-Zuskin/okf-abstracts/actions) [![Harnesses](https://img.shields.io/badge/harnesses-7-blue.svg)](skills/okf-generate-bundle/SKILL.md) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
-## Overview
+## 🌟 Overview
 
 **okf-abstracts** is the public, shared class ontology that downstream OKF v0.2 knowledge bundles pin by URL + version tag. It provides 105 public abstract `type: Class` concepts organized into four OWL-style layers, plus the `Spec` anchor for the OKF specification itself.
 
@@ -14,7 +14,7 @@ Every class carries a `# Contract` section stating what instances must do — ma
 
 ---
 
-## Layer Architecture
+## 🏛️ Layer Architecture
 
 | Layer | Name | Count | Purpose |
 | ----- | ---- | ----- | ------- |
@@ -27,7 +27,7 @@ Every class carries a `# Contract` section stating what instances must do — ma
 
 ---
 
-## Skills
+## 🛠️ Skills
 
 Five executable skills for bundle authors and downstream consumers:
 
@@ -41,7 +41,7 @@ Five executable skills for bundle authors and downstream consumers:
 
 ---
 
-## Quickstart
+## 🚀 Quickstart
 
 ### Prerequisites
 
@@ -76,7 +76,7 @@ pre-commit run --all-files
 
 ---
 
-## Pinning This Repo
+## 📌 Pinning This Repo
 
 Downstream bundles pin by tag URL:
 
@@ -89,19 +89,19 @@ subtype_of:
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete contribution workflow, development setup, commit conventions, gates, and release process.
 
 ---
 
-## License
+## 📄 License
 
 MIT. See [LICENSE](LICENSE).
 
 ---
 
-## References
+## 📖 References
 
 - [OKF v0.2 Specification](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
 - [OKF Viewer / Visualization](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/README.md)
