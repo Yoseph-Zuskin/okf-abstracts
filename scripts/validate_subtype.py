@@ -24,10 +24,9 @@ from typing import Dict, List, Optional, Set, Tuple
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _common import (  # noqa: E402
     RESERVED_FILES,
-    _ignored_set,
-    _is_local_only,
-    parse_frontmatter,
+    SKIP_DIRS,
     iter_bundle_mds,
+    parse_frontmatter,
 )
 
 # =============================================================================
@@ -337,10 +336,11 @@ def validate_bundle(
     all_issues = []
     checked = 0
 
-    ignored = _ignored_set(bundle_path)
-
-    # Find all concept files using the shared iterator that respects SKIP_DIRS and git-ignored files
-    for filepath in iter_bundle_mds(bundle_path, skip_local_only=True):
+    # Concept scope only: docs/ holds process docs and .openclaw/ holds
+    # generated skill mirrors (both were outside the historical walk).
+    for filepath in iter_bundle_mds(
+        bundle_path, skip_local_only=True, skip_dirs=SKIP_DIRS | {".openclaw", "docs"}
+    ):
         if filepath.name in RESERVED_FILES:
             continue
         # okf-spec.md is the external Spec anchor, not a lattice class
