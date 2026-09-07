@@ -1,6 +1,6 @@
 # okf-abstracts
 
-> **Shared OWL-style Class Ontology for OKF v0.2 Knowledge Bundles** — 103 public abstract classes across four layers, modeled on the `subClassOf` pattern.
+> **Shared OWL-style Class Ontology for OKF v0.2 Knowledge Bundles** — 105 public abstract classes across four layers, modeled on the `subClassOf` pattern.
 
 [![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) [![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-**okf-abstracts** is the public, shared class ontology that downstream OKF v0.2 knowledge bundles pin by URL + version tag. It provides 103 public abstract `type: Class` concepts organized into four OWL-style layers, plus the `Spec` anchor for the OKF specification itself.
+**okf-abstracts** is the public, shared class ontology that downstream OKF v0.2 knowledge bundles pin by URL + version tag. It provides 105 public abstract `type: Class` concepts organized into four OWL-style layers, plus the `Spec` anchor for the OKF specification itself.
 
 Every class carries a `# Contract` section stating what instances must do — making this a living, testable ontology, not a glossary.
 
@@ -18,10 +18,10 @@ Every class carries a `# Contract` section stating what instances must do — ma
 
 | Layer | Name | Count | Purpose |
 | ----- | ---- | ----- | ------- |
-| **L0** | `foundational/` | 8 | Domain-neutral upper-ontology primitives (Thing, Entity, Concept, Process, Agent, Spec, Object, Quality) |
-| **L1** | `core/` | 19 | General reusable concepts (Agent, Person, Organization, Role, Approver, Workflow, Artifact, Asset, Event, Decision, Instructional Artifact, Communicative Artifact, Knowledge Artifact, Operational Artifact, Metric, Client, Sponsor, Stakeholder, Software Agent, OKF Spec) |
+| **L0** | `foundational/` | 8 | Domain-neutral upper-ontology primitives (Thing, Entity, Concept, Process, Agent, Object, Quality, Relation — plus the Spec anchor) |
+| **L1** | `core/` | 19 | General reusable concepts (Person, Organization, Role, Approver, Approval, Workflow, Artifact, Asset, Event, Decision, Instructional Artifact, Communicative Artifact, Knowledge Artifact, Operational Artifact, Metric, Client, Sponsor, Stakeholder, Software Agent) |
 | **L2** | `domain/` | 42 | Domain specializations (Infrastructure, ML Task, Learning Paradigm, Generator, Validator, Skill, Template, Reference, Persona, Architecture Pattern, Product, Business Department, Country, Case Study, Election, etc.) |
-| **L3** | `application/` | 34 | Application-specific leaves (SaaS Product, Cloud Infrastructure, Buyer Persona, Regression, Classification, Deep Learning, Supervised/Unsupervised/Reinforcement Learning, etc.) |
+| **L3** | `application/` | 36 | Application-specific leaves (SaaS Product, Cloud Infrastructure, Buyer Persona, Regression, Classification, Deep Learning, Supervised/Unsupervised/Reinforcement Learning, etc.) |
 
 **Lattice Root**: `Thing` subtypes the `Spec` anchor per AGENTS.md — the entire lattice is a subtype of the OKF spec itself.
 
@@ -35,7 +35,7 @@ Five executable skills for bundle authors and downstream consumers:
 | ----- | ------- |
 | `okf-validate-subtype` | Strict `subtype_of` lattice validation (canonical `subtype_of`, alias warnings) |
 | `okf-abstract-lineage` | Timestamp-based check: have abstract entities changed since concept verification? |
-| `okf-generate-bundle` | Bare-bones OKF v0.2 bundle scaffolding (8 harness targets) |
+| `okf-generate-bundle` | Bare-bones OKF v0.2 bundle scaffolding (7 harness targets) |
 | `okf-intermediate-layers` | L1/L2 layer management utilities |
 | `okf-adversarial-review` | Read-only review protocol; BLOCKING findings must clear before release |
 
