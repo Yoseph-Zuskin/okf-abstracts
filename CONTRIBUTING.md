@@ -27,7 +27,7 @@ Before submitting, please keep these tenets in mind:
 ### Getting Started
 
 ```bash
-git clone https://github.com/Yoseph-Zuskin/okf-abstracts.git
+git clone https://github.com/<github-user>/okf-abstracts.git
 cd okf-abstracts
 pip install -r requirement.txt
 ```
