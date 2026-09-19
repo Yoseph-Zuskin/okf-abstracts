@@ -10,7 +10,7 @@
 
 **okf-abstracts** is the public, shared class ontology that downstream OKF v0.2 knowledge bundles pin by URL + version tag. It provides 105 public abstract `type: Class` concepts organized into four OWL-style layers, plus the `Spec` anchor for the OKF specification itself.
 
-Every class carries a `# Contract` section stating what instances must do — making this a living, testable ontology, not a glossary.
+Every class carries a `## Contract` section stating what instances must do — making this a living, testable ontology, not a glossary.
 
 ---
 

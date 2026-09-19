@@ -26,6 +26,7 @@ RESERVED_FILES = frozenset(
         "PULL_REQUEST_TEMPLATE.md",
         "privacy.md",
         "terms.md",
+        "SECURITY.md",
     }
 )
 

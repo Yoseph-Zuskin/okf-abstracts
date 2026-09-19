@@ -2,6 +2,23 @@
 
 ## [Unreleased]
 
+### Added
+
+- `CONTRIBUTING.md`, `README.md`, `AGENTS.md`: contribution workflow, repo overview, agent instructions
+- `SECURITY.md`: vulnerability reporting policy + SkillSpector static-scan triage (all findings false positives; no actionable issue)
+
+### Fixed
+
+- Validator walks concept paths only (`docs/`, `.openclaw/` mirrors out of scope)
+- `_is_local_only` path resolution with CWD-relative bundle roots
+- `release.yml`: tag job fetches tags first; auto-merge removed; Node-24 action majors
+- `README` counts and layer enumerations verified against the index (105 classes, 8+19+42+36)
+- Skill contract clarifications from SkillSpector semantic findings: `okf-abstract-lineage` read-only default vs confirmed `--update-versions` writes, `okf-intermediate-layers` mutation warning, `okf-validate-subtype` allowed-tools scope
+
+### Security
+
+- SkillSpector 2.11.2 semantic re-scan of `skills/` (2026-09-19, `copilot_cli`/Copilot Free, all 5 skills successful): max risk 34 (CAUTION); 2 HIGH hits are analyzer misfires on markdown-only skills (FP), 1 MEDIUM doc inconsistency and 1 MEDIUM missing-mutation-warning logged as doc-clarity backlog. No exploitable issues; see `SECURITY.md`
+
 ## [0.1.0] - 2026-09-05
 
 ### Added

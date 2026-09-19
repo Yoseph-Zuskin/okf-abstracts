@@ -13,6 +13,9 @@
     "ignore_numbered_lists": true
   },
   "MD025": false,
+  "MD024": {
+    "siblings_only": true
+  },
   "MD041": false,
   "MD040": true,
   "MD052": false,

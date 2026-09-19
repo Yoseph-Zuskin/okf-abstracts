@@ -35,8 +35,10 @@ def main() -> int:
     bad = []
     checked = 0
     for arg in sys.argv[1:]:
-        root = Path(arg)
-        checked += sum(1 for _ in root.rglob("*.md"))
+        root = Path(arg).resolve()
+        # Count the same in-scope files the check walks (git-ignored
+        # local-only files excluded), not the raw rglob total.
+        checked += sum(1 for _ in iter_bundle_mds(root, skip_local_only=True))
         bad += check_bundle(Path(arg))
     if bad:
         for b in bad:

@@ -34,4 +34,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete contribution workflow, d
 ## Changelog & Release
 
 - Log user-facing changes under `## [Unreleased]` in `CHANGELOG.md`; never pre-create version sections or delete `Unreleased` (the release workflow promotes it and fails without it). `log.md` keeps one section per day.
-- Release: dispatch the `release` workflow with `x.y.z` → `release/vX.Y.Z` PR from `develop` (version bump + promotion) → review → merge to `main` → tag `vX.Y.Z` + GitHub Release. Release this repo before downstream bundles — their pins resolve only after the tag exists and this repo is public.
+- Release: dispatch the `release` workflow with `x.y.z` → `release/vX.Y.Z` PR from `develop` (version bump + promotion) → review → merge to `main` → tag `vX.Y.Z` + GitHub Release. Release this repo before downstream bundles — their pins resolve only after the tag exists and this repo is public. After release, run the post-release visibility step in CONTRIBUTING.md (BundleDex listing, repo topics, badge).
