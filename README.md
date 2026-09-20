@@ -2,7 +2,12 @@
 
 > **Shared OWL-style Class Ontology for OKF v0.2 Knowledge Bundles** — 105 public abstract classes across four layers, modeled on the `subClassOf` pattern.
 
-[![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) [![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0) [![CI](https://img.shields.io/github/actions/workflow/status/Yoseph-Zuskin/okf-abstracts/ci.yml?branch=main&label=CI)](https://github.com/Yoseph-Zuskin/okf-abstracts/actions) [![Harnesses](https://img.shields.io/badge/harnesses-7-blue.svg)](skills/okf-generate-bundle/SKILL.md) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+[![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0)
+[![CI](https://img.shields.io/github/actions/workflow/status/Yoseph-Zuskin/okf-abstracts/ci.yml?branch=main&label=CI)](https://github.com/Yoseph-Zuskin/okf-abstracts/actions)
+[![Harnesses](https://img.shields.io/badge/harnesses-7-blue.svg)](skills/okf-generate-bundle/SKILL.md)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![BundleDex](https://bundledex.net/badge/okf-abstracts.svg)](https://bundledex.net/bundles/okf-abstracts/)
 
 ---
 
@@ -10,7 +15,7 @@
 
 **okf-abstracts** is the public, shared class ontology that downstream OKF v0.2 knowledge bundles pin by URL + version tag. It provides 105 public abstract `type: Class` concepts organized into four OWL-style layers, plus the `Spec` anchor for the OKF specification itself.
 
-Every class carries a `# Contract` section stating what instances must do — making this a living, testable ontology, not a glossary.
+Every class carries a `## Contract` section stating what instances must do — making this a living, testable ontology, not a glossary.
 
 ---
 
@@ -41,7 +46,27 @@ Five executable skills for bundle authors and downstream consumers:
 
 ---
 
-## 🚀 Quickstart
+## 🚀 Install
+
+Pick the surface you need. The repo is public; no marketplace or package install required.
+
+### Clone (contributors and validators)
+
+```bash
+git clone https://github.com/Yoseph-Zuskin/okf-abstracts.git
+cd okf-abstracts
+pip install -r requirement.txt
+```
+
+### Pin as a dependency (downstream bundles)
+
+Reference classes by tag URL in `subtype_of` — see [Pinning This Repo](#-pinning-this-repo). Release order matters: this repo must be tagged before downstream CI can resolve pins.
+
+### Harnesses (agent users)
+
+Seven harness surfaces ship in-repo — point your agent at the clone or register the manifest per harness: `.claude-plugin/` (Claude Code), `.codex-plugin/` (Codex), `.devin-plugin/` (Devin), `.grok-plugin/` (Grok Build), `.qoder-plugin/` (Qoder), `.openclaw/` (OpenClaw), `.github/plugin.json` (Copilot). See each directory's manifest for the exact registration step.
+
+## ⚡ Quick Start
 
 ### Prerequisites
 
