@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-20
 ### Added
 
 - `CONTRIBUTING.md`, `README.md`, `AGENTS.md`: contribution workflow, repo overview, agent instructions
