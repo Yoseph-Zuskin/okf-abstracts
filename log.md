@@ -127,3 +127,36 @@
   model `opencode/nemotron-3-ultra-free`, score 83/100 — identical to the
   prior semantic baseline. LLM stage degraded (0/4 calls: shared runtime
   budget expired), run is static-only, no new findings. Posture unchanged.
+
+## 2026-09-19
+
+* **Semantic re-scan (Copilot Free)**: `copilot_cli` provider (local
+  fork), all 5 skills executed successfully — max risk 34 (CAUTION),
+  4 findings triaged (2 HIGH analyzer misfires on markdown-only
+  skills; lineage contract vs `--update-versions` doc inconsistency;
+  intermediate-layers missing mutation warning). No exploitable
+  issues. `opencode_cli`/Nemotron route delivered 0/4 LLM calls:
+  Zen answers 403 to any call carrying the deny-all isolation
+  (bisected, model-independent, new since 09-12).
+* **Skill doc fixes**: lineage read-only default vs confirmed writes,
+  intermediate-layers mutation warning, validate-subtype
+  allowed-tools scope.
+* **Adversarial review**: READY-WITH-FIXES — 2 private-origin drafts moved out of the bundle
+  to local-only `docs/abstracts/`; counts confirmed 105 (L3 36).
+* **SkillEvaluator Tier 1 (keyless)**: PII/Unicode/License/Lint PASS,
+  quality grade C; `validate`-gate fails are Agent-Skills contract
+  mismatch (advisory, policy-overlay territory).
+* **Tooling**: `check_newlines.py` counts in-scope files only;
+  RESERVED_FILES filtering experiment in `iter_bundle_mds`
+  reverted (stripped hygiene coverage; ontology checkers already
+  skip reserved files); `SECURITY.md` + `CHANGELOG.md` scan addenda.
+
+## 2026-09-20
+
+* **README**: new Install section (clone / pin / 7 harnesses),
+  Quickstart normalized to Quick Start, BundleDex badge.
+* **PR template**: explicit `Fixes: #NNN` field + no-issue-no-merge
+  checklist item.
+* **PR #2**: chore/release-hardening branch pushed, 4 commits,
+  awaiting signed-commit setup (branch protection requires
+  cryptographic signatures, not just DCO trailers).

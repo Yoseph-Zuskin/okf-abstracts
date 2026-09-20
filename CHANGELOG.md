@@ -6,6 +6,8 @@
 
 - `CONTRIBUTING.md`, `README.md`, `AGENTS.md`: contribution workflow, repo overview, agent instructions
 - `SECURITY.md`: vulnerability reporting policy + SkillSpector static-scan triage (all findings false positives; no actionable issue)
+- `README.md`: Install section (clone / pin-as-dependency / 7 harness manifests), BundleDex badge
+- PR template: explicit `Fixes:` field plus no-issue-no-merge checklist item
 
 ### Fixed
 
@@ -14,6 +16,8 @@
 - `release.yml`: tag job fetches tags first; auto-merge removed; Node-24 action majors
 - `README` counts and layer enumerations verified against the index (105 classes, 8+19+42+36)
 - Skill contract clarifications from SkillSpector semantic findings: `okf-abstract-lineage` read-only default vs confirmed `--update-versions` writes, `okf-intermediate-layers` mutation warning, `okf-validate-subtype` allowed-tools scope
+- Adversarial review: private-origin drafts moved out of the bundle to local-only `docs/abstracts/`; counts confirmed 105 (L3 36)
+- Reverted RESERVED_FILES filtering in `iter_bundle_mds` (ontology checkers already skip reserved files; the shared change stripped hygiene coverage)
 
 ### Security
 
