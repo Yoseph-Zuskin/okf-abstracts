@@ -46,7 +46,27 @@ Five executable skills for bundle authors and downstream consumers:
 
 ---
 
-## 🚀 Quickstart
+## 🚀 Install
+
+Pick the surface you need. The repo is public; no marketplace or package install required.
+
+### Clone (contributors and validators)
+
+```bash
+git clone https://github.com/Yoseph-Zuskin/okf-abstracts.git
+cd okf-abstracts
+pip install -r requirement.txt
+```
+
+### Pin as a dependency (downstream bundles)
+
+Reference classes by tag URL in `subtype_of` — see [Pinning This Repo](#-pinning-this-repo). Release order matters: this repo must be tagged before downstream CI can resolve pins.
+
+### Harnesses (agent users)
+
+Seven harness surfaces ship in-repo — point your agent at the clone or register the manifest per harness: `.claude-plugin/` (Claude Code), `.codex-plugin/` (Codex), `.devin-plugin/` (Devin), `.grok-plugin/` (Grok Build), `.qoder-plugin/` (Qoder), `.openclaw/` (OpenClaw), `.github/plugin.json` (Copilot). See each directory's manifest for the exact registration step.
+
+## ⚡ Quick Start
 
 ### Prerequisites
 

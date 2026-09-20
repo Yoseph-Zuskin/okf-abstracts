@@ -127,11 +127,7 @@ def iter_bundle_mds(root, skip_local_only=False, skip_dirs=None):
     ignored = _ignored_set(root) if skip_local_only else set()
     skip = SKIP_DIRS if skip_dirs is None else skip_dirs
     for f in Path(root).rglob("*.md"):
-        if (
-            any(p in skip for p in f.parts)
-            or f.name == ".gitkeep"
-            or f.name in RESERVED_FILES
-        ):
+        if any(p in skip for p in f.parts) or f.name == ".gitkeep":
             continue
         if skip_local_only and _is_local_only(f, root, ignored):
             continue
