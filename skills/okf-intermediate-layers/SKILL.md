@@ -149,6 +149,10 @@ Run okf-skills validation first, then intermediate layer validation.
 
 ## Workflow
 
+> Mutation warning: steps 4–6 create and edit files (new entity files,
+> `subtype_of` linkages, layer indexes). Review the target bundle first;
+> run only in trusted repositories or after backup.
+
 1. Accept bundle path and options as arguments
 2. If --create: generate new intermediate layer abstract entity
 3. If --list: display current layer hierarchy

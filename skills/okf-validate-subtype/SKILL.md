@@ -139,7 +139,8 @@ Routes to: [okf-abstract-lineage](../okf-abstract-lineage/SKILL.md) for abstract
 
 ### Invariants
 
-- Read-only: never modifies bundle files; warnings never fail unless `--strict`.
+- Read-only by default: never modifies bundle files; warnings never fail unless `--strict`.
+- `allowed-tools` retains Write/Edit/Bash only to run the bundled check scripts and Verification fixtures in place — the skill itself performs no write path; treat any file modification outside script execution as a defect.
 
 ## Verification
 

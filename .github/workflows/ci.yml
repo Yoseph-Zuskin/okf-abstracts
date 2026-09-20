@@ -26,4 +26,4 @@ jobs:
         with:
           node-version: lts/*
       # READMEs carry intentional marketing HTML (MD033), enforced by config elsewhere
-      - run: npx --yes markdownlint-cli2 "**/*.md" "!**/README.md"
+      - run: npx --yes markdownlint-cli2@0.17.0 "**/*.md" "!**/README.md"

@@ -27,7 +27,7 @@ Before submitting, please keep these tenets in mind:
 ### Getting Started
 
 ```bash
-git clone https://github.com/Yoseph-Zuskin/okf-abstracts.git
+git clone https://github.com/<github-user>/okf-abstracts.git
 cd okf-abstracts
 pip install -r requirement.txt
 ```
@@ -106,6 +106,11 @@ All must pass with `0 errors, 0 warnings` on both this repo and the AI-Product-M
 4. Review the PR (reconcile any duplicate headers), squash-merge to `main`.
 5. Tag job fires on `VERSION` change → creates `vX.Y.Z` tag + GitHub Release.
 6. **Release this repo before downstream bundles** — their CI pins this repo by tag, which must exist and be public.
+7. **Post-release visibility** (maintainer only, keeps the BundleDex listing working):
+   - Submit/update the listing at `https://bundledex.net/submit` (repo URL, keyword-rich description: what it is + OKF v0.2 + harness count, comma-separated tags).
+   - Set GitHub repo topics (mirror the BundleDex tags; e.g. `okf`, `open-knowledge-format`, `knowledge-bundle`, `ontology`, `ai-agents`, harness names).
+   - Keep the BundleDex badge in `README.md`; confirm the detail page shows OKF Conformant with the right version.
+   - Verify the OKF Index card after the sweep re-reads (no submission needed for GitHub): `https://okfindex.com/api/bundles?repo=Yoseph-Zuskin/okf-abstracts` — concept URLs must resolve (root `index.md` uses file-relative links for this reason), `updated_at` must advance past the release push.
 
 ---
 

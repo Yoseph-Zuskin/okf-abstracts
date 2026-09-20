@@ -129,9 +129,8 @@ Routes to: [okf-validate-subtype](../okf-validate-subtype/SKILL.md) for subtype 
 
 ### Invariants
 
-- Never modifies bundle files
-- Only reads files, never writes
-- Never auto-bumps versions without explicit confirmation
+- Default mode is strictly read-only: reads files, never writes, never modifies bundle files
+- The sole write path is `--update-versions`, which auto-bumps `subtype_of[].version` only after interactive confirmation — never silently, never by default
 
 ## Verification
 
