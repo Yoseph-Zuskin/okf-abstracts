@@ -2,7 +2,12 @@
 
 > **Shared OWL-style Class Ontology for OKF v0.2 Knowledge Bundles** — 105 public abstract classes across four layers, modeled on the `subClassOf` pattern.
 
-[![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) [![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0) [![CI](https://img.shields.io/github/actions/workflow/status/Yoseph-Zuskin/okf-abstracts/ci.yml?branch=main&label=CI)](https://github.com/Yoseph-Zuskin/okf-abstracts/actions) [![Harnesses](https://img.shields.io/badge/harnesses-7-blue.svg)](skills/okf-generate-bundle/SKILL.md) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Specification](https://img.shields.io/badge/Specification-OKF_v0.2-blue.svg)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+[![Version](https://img.shields.io/badge/Version-0.1.0-green.svg)](https://github.com/Yoseph-Zuskin/okf-abstracts/releases/tag/v0.1.0)
+[![CI](https://img.shields.io/github/actions/workflow/status/Yoseph-Zuskin/okf-abstracts/ci.yml?branch=main&label=CI)](https://github.com/Yoseph-Zuskin/okf-abstracts/actions)
+[![Harnesses](https://img.shields.io/badge/harnesses-7-blue.svg)](skills/okf-generate-bundle/SKILL.md)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![BundleDex](https://bundledex.net/badge/okf-abstracts.svg)](https://bundledex.net/bundles/okf-abstracts/)
 
 ---
 
